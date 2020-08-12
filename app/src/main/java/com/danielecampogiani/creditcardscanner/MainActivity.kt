@@ -10,7 +10,7 @@ import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import com.danielecampogiani.creditcardscanner.utils.*
-import com.google.firebase.ml.vision.FirebaseVision
+import com.google.mlkit.vision.text.TextRecognition
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val CAMERA_PERMISSION = 7762
@@ -18,7 +18,7 @@ private const val CAMERA_PERMISSION = 7762
 @SuppressLint("UnsafeExperimentalUsageError")
 class MainActivity : AppCompatActivity() {
 
-    private val useCase = ExtractDataUseCase(FirebaseVision.getInstance().onDeviceTextRecognizer)
+    private val useCase = ExtractDataUseCase(TextRecognition.getClient())
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
