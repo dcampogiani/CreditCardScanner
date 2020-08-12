@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Credit Card Scanner</string>
+    <string name="get_data">Get Data</string>
+    <string name="number">Number</string>
+    <string name="date">Date</string>
+</resources>
