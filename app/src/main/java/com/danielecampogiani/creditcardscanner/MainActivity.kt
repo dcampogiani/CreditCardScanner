@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun bindCardDetails(card: CardDetails) {
+        owner.text = card.owner
         number.text = card.number
         date.text = "${card.expirationMonth}/${card.expirationYear}"
     }

@@ -18,21 +18,33 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="16dp"
-        android:text="@string/get_data" />
+        android:backgroundTint="@color/primaryDarkColor"
+        android:text="@string/scan"
+        android:textColor="@color/secondaryColor" />
+
+    <TextView
+        android:id="@+id/owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/owner"
+        android:textIsSelectable="true" />
 
     <TextView
         android:id="@+id/number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="@string/number" />
+        android:text="@string/number"
+        android:textIsSelectable="true" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="@string/date" />
+        android:text="@string/date"
+        android:textIsSelectable="true" />
 
 
 </LinearLayout>
