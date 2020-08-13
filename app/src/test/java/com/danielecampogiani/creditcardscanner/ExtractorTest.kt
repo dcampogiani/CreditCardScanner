@@ -18,6 +18,7 @@ class ExtractorTest {
                 "maestro"
 
         val expected = CardDetails(
+            owner = null,
             number = "7391 8492 8502 752 495",
             expirationMonth = "09",
             expirationYear = "27"
@@ -36,6 +37,7 @@ class ExtractorTest {
                 "website.com DEBIT TAG SYSTEMS 72945-08-27"
 
         val expected = CardDetails(
+            owner = null,
             number = "7194 9274 7591 7593",
             expirationMonth = "08",
             expirationYear = "23"
@@ -45,4 +47,26 @@ class ExtractorTest {
 
         assertEquals(expected, result)
     }
+
+    @Test
+    fun withNameAndLongYear() {
+        val input = "DEBIT\n" +
+                "7284 1724 7294 1750\n" +
+                "BAM MARGERA\n" +
+                "N.33033556\n" +
+                "SCAD. 12/2047"
+
+        val expected = CardDetails(
+            owner = "BAM MARGERA",
+            number = "7284 1724 7294 1750",
+            expirationMonth = "12",
+            expirationYear = "2047"
+        )
+
+        val result = Extractor.extractData(input)
+
+        assertEquals(expected, result)
+    }
+
+
 }
