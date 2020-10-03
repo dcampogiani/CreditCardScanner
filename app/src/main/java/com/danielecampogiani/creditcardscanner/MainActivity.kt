@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     private fun buildPreview(): Preview = Preview.Builder()
         .build()
         .apply {
-            setSurfaceProvider(previewView.createSurfaceProvider())
+            setSurfaceProvider(previewView.surfaceProvider)
         }
 
     private fun buildCameraSelector(): CameraSelector = CameraSelector.Builder()
