@@ -20,7 +20,7 @@ object Extractor {
         return lines
             .filter { it.contains(" ") }
             .filter { line -> line.asIterable().none { char -> char.isDigit() } }
-            .maxBy { it.length }
+            .maxByOrNull { it.length }
     }
 
     private fun extractNumber(lines: List<String>): String? {

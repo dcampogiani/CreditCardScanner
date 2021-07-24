@@ -6,6 +6,7 @@ import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         cameraPermissions()
     }
 
+    @SuppressLint("UnsafeOptInUsageError")
     private fun cameraPermissions() {
         if (hasPermission(CAMERA)
         ) {
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @ExperimentalGetImage
     private fun bindUseCases(cameraProvider: ProcessCameraProvider) {
         val preview = buildPreview()
         val takePicture = buildTakePicture()
@@ -77,10 +80,12 @@ class MainActivity : AppCompatActivity() {
         date.text = "${card.expirationMonth}/${card.expirationYear}"
     }
 
+    @SuppressLint("UnsafeOptInUsageError")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>, grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == CAMERA_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PERMISSION_GRANTED) {
             launchWhenResumed {
                 bindUseCases(getCameraProvider())
