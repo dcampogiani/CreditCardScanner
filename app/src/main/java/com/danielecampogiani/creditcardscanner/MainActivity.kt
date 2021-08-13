@@ -12,6 +12,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import com.danielecampogiani.creditcardscanner.utils.*
 import com.google.mlkit.vision.text.TextRecognition
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val CAMERA_PERMISSION = 7762
@@ -19,7 +20,7 @@ private const val CAMERA_PERMISSION = 7762
 @SuppressLint("UnsafeExperimentalUsageError")
 class MainActivity : AppCompatActivity() {
 
-    private val useCase = ExtractDataUseCase(TextRecognition.getClient())
+    private val useCase = ExtractDataUseCase(TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS))
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
