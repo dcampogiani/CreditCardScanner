@@ -34,7 +34,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
 
     def camerax_version = '1.0.2'
